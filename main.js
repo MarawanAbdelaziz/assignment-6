@@ -1,13 +1,8 @@
 import express from "express";
-import sequelize from "./DB/connection.js";
-import commentModel from "./DB/models/comments.model.js";
 import bootstrap from "./src/bootstrap.js";
 
 const app = express();
-const port = 3000;
-
-sequelize.sync({ alter: true });
-// sequelize.sync();
+const port = process.env.port || 3000;
 
 bootstrap(app, express);
 
